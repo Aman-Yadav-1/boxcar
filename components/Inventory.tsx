@@ -9,7 +9,11 @@ interface Car {
   model: string;
   year: number;
   price: number;
-  image: string;
+  image: {
+    src: string;
+    width: number;
+    height: number;
+  };
 }
 
 export default function InventoryPage() {

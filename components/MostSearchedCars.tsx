@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { CarCard } from '@/components/carCard'
 import { CarCategory, CarsData } from '@/components/types'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { Button } from './ui/button'
+import { Button } from '@/components/ui/button'
 
 const cars: CarsData = {
     suv: [
@@ -517,9 +517,9 @@ export default function MostSearchedCars() {
     const totalPages = Math.ceil(cars[activeCategory].length / carsPerPage)
 
     return (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-background">
             <div className="container mx-auto px-4 max-w-7xl">
-                <h2 className="text-5xl font-bold text-center mb-12">The Most Searched Cars</h2>
+                <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 text-foreground">The Most Searched Cars</h2>
                 <Tabs
                     defaultValue="suv"
                     className="flex flex-col items-center"
@@ -529,61 +529,61 @@ export default function MostSearchedCars() {
                     }}
                 >
                     <div className="relative mb-8">
-                        <TabsList className="relative z-10 bg-transparent">
-                            <TabsTrigger value="suv" className="relative">
+                        <TabsList className="relative z-10 bg-transparent flex flex-wrap justify-center">
+                            <TabsTrigger value="suv" className="relative mx-2">
                                 SUV
-                                <div className="absolute bottom-0 left-0 w-full h-1 bg-[#405FF2] transform scale-x-0 transition-transform data-[state=active]:scale-x-100" />
+                                <div className="absolute bottom-0 left-0 w-full h-1 bg-primary transform scale-x-0 transition-transform data-[state=active]:scale-x-100" />
                             </TabsTrigger>
-                            <TabsTrigger value="sedan" className="relative">
+                            <TabsTrigger value="sedan" className="relative mx-2">
                                 Sedan
-                                <div className="absolute bottom-0 left-0 w-full h-1 bg-[#405FF2] transform scale-x-0 transition-transform data-[state=active]:scale-x-100" />
+                                <div className="absolute bottom-0 left-0 w-full h-1 bg-primary transform scale-x-0 transition-transform data-[state=active]:scale-x-100" />
                             </TabsTrigger>
-                            <TabsTrigger value="hatchback" className="relative">
+                            <TabsTrigger value="hatchback" className="relative mx-2">
                                 Hatchback
-                                <div className="absolute bottom-0 left-0 w-full h-1 bg-[#405FF2] transform scale-x-0 transition-transform data-[state=active]:scale-x-100" />
+                                <div className="absolute bottom-0 left-0 w-full h-1 bg-primary transform scale-x-0 transition-transform data-[state=active]:scale-x-100" />
                             </TabsTrigger>
-                            <TabsTrigger value="hybrid" className="relative">
+                            <TabsTrigger value="hybrid" className="relative mx-2">
                                 Hybrid
-                                <div className="absolute bottom-0 left-0 w-full h-1 bg-[#405FF2] transform scale-x-0 transition-transform data-[state=active]:scale-x-100" />
+                                <div className="absolute bottom-0 left-0 w-full h-1 bg-primary transform scale-x-0 transition-transform data-[state=active]:scale-x-100" />
                             </TabsTrigger>
-                            <TabsTrigger value="coupe" className="relative">
+                            <TabsTrigger value="coupe" className="relative mx-2">
                                 Coupe
-                                <div className="absolute bottom-0 left-0 w-full h-1 bg-[#405FF2] transform scale-x-0 transition-transform data-[state=active]:scale-x-100" />
+                                <div className="absolute bottom-0 left-0 w-full h-1 bg-primary transform scale-x-0 transition-transform data-[state=active]:scale-x-100" />
                             </TabsTrigger>
                         </TabsList>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
                         {getCurrentCars().map(car => (
                             <CarCard key={car.id} car={car} />
                         ))}
                     </div>
 
                     <div className="flex items-center justify-center space-x-4 mt-12">
-                    <Button
-                        onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
-                        className="p-2 rounded-full bg-white border-black text-gray-400 hover:bg-[#405FF2] hover:text-white transition-all"
-                        disabled={currentPage === 1}
-                    >
-                        <ChevronLeft className="w-5 h-5" />
-                    </Button>
+                        <Button
+                            onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
+                            className="p-2 rounded-full bg-white border-black text-gray-400 hover:bg-primary hover:text-white transition-all"
+                            disabled={currentPage === 1}
+                        >
+                            <ChevronLeft className="w-5 h-5" />
+                        </Button>
 
-                    <div className="flex space-x-2 text-gray-400">
-                        <span className={currentPage === 1 ? 'text-white' : ''}>1</span>
-                        <span className={currentPage === 2 ? 'text-white' : ''}>2</span>
-                        <span>...</span>
-                        <span className={currentPage === 4 ? 'text-white' : ''}>4</span>
-                        <span className={currentPage === 5 ? 'text-white' : ''}>5</span>
+                        <div className="flex space-x-2 text-gray-400">
+                            <span className={currentPage === 1 ? 'text-white' : ''}>1</span>
+                            <span className={currentPage === 2 ? 'text-white' : ''}>2</span>
+                            <span>...</span>
+                            <span className={currentPage === 4 ? 'text-white' : ''}>4</span>
+                            <span className={currentPage === 5 ? 'text-white' : ''}>5</span>
+                        </div>
+
+                        <Button
+                            onClick={() => currentPage < totalPages && setCurrentPage(currentPage + 1)}
+                            className="p-2 rounded-full bg-white border-black text-gray-400 hover:bg-primary hover:text-white transition-all"
+                            disabled={currentPage === totalPages}
+                        >
+                            <ChevronRight className="w-5 h-5" />
+                        </Button>
                     </div>
-
-                    <Button
-                        onClick={() => currentPage < totalPages && setCurrentPage(currentPage + 1)}
-                        className="p-2 rounded-full bg-white border-black text-gray-400 hover:bg-[#405FF2] hover:text-white transition-all"
-                        disabled={currentPage === totalPages}
-                    >
-                        <ChevronRight className="w-5 h-5" />
-                    </Button>
-                </div>
                 </Tabs>
             </div>
         </section>

@@ -1,12 +1,12 @@
-import { Button } from "./ui/button"
+import { Button } from "@/components/ui/button"
 import { ArrowUpRight } from "lucide-react"
 import Image from "next/image"
 import Logo from '@/app/images/logo.png'
 
 export const Explore = () => {
   return (
-    <div className="container mx-auto max-w-7xl py-16 mb-12">
-      <div className="flex items-center justify-between">
+    <div className="container mx-auto max-w-7xl py-16 mb-12 px-4">
+      <div className="flex flex-col md:flex-row items-center justify-between">
         <div className="space-y-6">
           <div>
             <h2 className="text-4xl font-bold mb-5">Explore Our Premium<br/> Brands</h2>
@@ -20,7 +20,7 @@ export const Explore = () => {
             </Button>
           </div>
         </div>
-        <div>
+        <div className="mt-8 md:mt-0">
           <Image 
             src={Logo} 
             alt="Brand Logo" 

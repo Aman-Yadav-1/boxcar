@@ -67,13 +67,13 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="px-8 py-12 bg-white max-w-8xl mx-10">
+    <footer className="px-4 sm:px-8 py-12 bg-white max-w-8xl mx-auto">
       <div className="mt-24 text-center mb-28">
         <h3 className="text-2xl font-bold">Join BoxCar</h3>
         <p className="mt-2 text-gray-600">
           Receive pricing updates, shopping tips & more!
         </p>
-        <div className="mt-6 flex items-center justify-center gap-4">
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Input 
             type="email" 
             placeholder="Your email address" 
@@ -86,7 +86,7 @@ export default function Footer() {
           </Button>
         </div>
       </div>
-      <div className="grid md:grid-cols-5 gap-8 mb-8 mt-36">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-8 mt-36">
         {footerLinks.map((section, index) => (
           <div key={index}>
             <h3 className="text-sm font-semibold text-gray-900 mb-4">{section.title}</h3>

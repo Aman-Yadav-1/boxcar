@@ -5,8 +5,8 @@ import Google from '@/app/images/google.png';
 
 export default function BoxCar() {
     return (
-        <div className="container mx-auto max-w-7xl py-12">
-            <div className="flex flex-col px-16 py-16 md:flex-row items-center gap-8 bg-[#405FF2] rounded-2xl p-8">
+        <div className="container mx-auto max-w-7xl py-12 px-4">
+            <div className="flex flex-col md:flex-row items-center gap-8 bg-[#405FF2] rounded-2xl p-8">
                 {/* Left Content */}
                 <div className="w-full md:w-1/3 space-y-4">
                     <h1 className="text-white text-3xl md:text-4xl font-bold">Who is BoxCar</h1>
@@ -16,7 +16,7 @@ export default function BoxCar() {
                 </div>
 
                 {/* Right Content - Review Cards */}
-                <div className="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     {/* Trustpilot Card */}
                     <ReviewCard 
                         title="Great"
@@ -58,7 +58,6 @@ const ReviewCard = ({ title, image, imageAlt }: ReviewCardProps) => (
                     <span className="text-white text-2xl">★</span>
                 </div>
             ))}
-            
         </div>
         <p className="text-sm text-gray-500">Based on 5,801 reviews</p>
 

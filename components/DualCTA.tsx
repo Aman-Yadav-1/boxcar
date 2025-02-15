@@ -8,7 +8,7 @@ export default function DualCTA() {
   return (
     <section className="container max-w-7xl mx-auto px-4 py-16">
       <div className="grid md:grid-cols-2 gap-8">
-        <div className="w-full max-w-2xl h-[300px] rounded-2xl p-8 text-black bg-[#E9F2FF] flex items-center">
+        <div className="w-full h-[300px] rounded-2xl p-8 text-black bg-[#E9F2FF] flex items-center">
             <div>
             <h3 className="text-2xl font-bold mb-4">Are You Looking For a Car?</h3>
             <p className="mb-6 max-w-md leading-relaxed">
@@ -26,7 +26,7 @@ export default function DualCTA() {
           />
         </div>
         
-        <div className="w-full max-w-2xl h-[300px] rounded-2xl p-8 text-black bg-[#FFE9F3] flex items-center">
+        <div className="w-full h-[300px] rounded-2xl p-8 text-black bg-[#FFE9F3] flex items-center">
           <div>
             <h3 className="text-2xl font-bold mb-4">Do You Want to Sell a Car?</h3>
             <p className="mb-6 max-w-md leading-relaxed">

@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { CarCard } from '@/components/carCard'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { Button } from './ui/button'
+import { Button } from '@/components/ui/button'
 
 const selectedCars = [
     {
@@ -10,7 +10,7 @@ const selectedCars = [
         brand: 'Mercedes-Benz',
         model: 'GLE Class',
         spec: '2023 GLE 450 4MATIC AMG Line Premium Plus 5dr 9G-Tronic',
-        image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2',
+        image: 'https://images.unsplash.com/photo-1633707007826-4c2e6e92a122',
         mileage: { icon: 'Gauge', value: '72,925 miles' },
         transmission: { icon: 'Cog', value: 'Automatic' },
         fuel: { icon: 'Fuel', value: 'Petrol' },
