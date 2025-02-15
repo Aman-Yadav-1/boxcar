@@ -9,7 +9,7 @@ import Image from 'next/image'
   import Hybrid from '@/app/images/hybrid.png'
   import Convertible from '@/app/images/convertible.png'
   import Electric from '@/app/images/electric.png'
-  import { TbCar, TbCarSuv } from 'react-icons/tb' 
+  import { TbCarSuv } from 'react-icons/tb' 
 
   const categories = [
     { name: 'SUV', icon: TbCarSuv  },

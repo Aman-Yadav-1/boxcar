@@ -1,6 +1,7 @@
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { ArrowUpRight, Gauge, Fuel, Cog } from 'lucide-react'
 import { Car } from '@/components/types'
+import Image from 'next/image'
 
 interface CarCardProps {
   car: Car
@@ -14,7 +15,7 @@ export function CarCard({ car }: CarCardProps) {
           ${car.feature === 'Low Mileage' ? 'bg-blue-100 text-blue-600' : 'bg-green-100 text-green-600'}`}>
           {car.feature}
         </span>
-        <img
+        <Image
           src={car.image}
           alt={`${car.brand} ${car.model}`}
           className="h-40 w-full object-cover rounded-lg"

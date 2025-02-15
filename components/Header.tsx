@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Button } from './ui/button';
-
 import { Search, ChevronDown } from 'lucide-react';
 import { IoPhonePortraitOutline } from "react-icons/io5";
 import { HiOutlineUser } from "react-icons/hi2";
@@ -46,5 +45,4 @@ export default function Header() {
             </div>
         </header>
     );
-
 }

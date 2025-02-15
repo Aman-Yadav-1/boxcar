@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useState, useMemo } from 'react';
 
 interface Car {
@@ -64,7 +65,7 @@ export default function CarGrid({ title, cars, showFilters }: CarGridProps) {
           {filteredAndSortedCars.map(car => (
             <div key={car.id} className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="aspect-w-16 aspect-h-9">
-                <img
+                <Image
                   src={car.image}
                   alt={`${car.year} ${car.make} ${car.model}`}
                   className="object-cover w-full h-full"

@@ -1,5 +1,4 @@
 import { Button } from "./ui/button"
-import { Input } from "./ui/input"
 import { ArrowUpRight } from "lucide-react"
 import Image from "next/image"
 import Logo from '@/app/images/logo.png'
